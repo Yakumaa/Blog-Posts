@@ -1,4 +1,5 @@
 import axios from "axios";
+import '../DeleteBlog.css';
 
 const DeleteBlog = ({ blogId, onDelete }) => {
   const handleDelete = () => {
@@ -18,7 +19,9 @@ const DeleteBlog = ({ blogId, onDelete }) => {
   }
 
   return (
-    <button onClick={handleDelete}>Delete</button>
+    <div className="delete-blog">
+      <button onClick={handleDelete}>Delete</button>
+    </div>
   )
 }
 

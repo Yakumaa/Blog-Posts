@@ -1,0 +1,42 @@
+/* Style for the create blog form container */
+.create-blog-form {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the create blog form title */
+.create-blog-form h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style for the input fields */
+.create-blog-form input[type="text"],
+.create-blog-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+/* Style for the create blog button */
+.create-blog-form button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.create-blog-form button[type="submit"] {
+  background-color: #28a745;
+}
+
+.create-blog-form button:hover {
+  background-color: #0056b3;
+}

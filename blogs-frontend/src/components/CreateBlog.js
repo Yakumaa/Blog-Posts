@@ -1,7 +1,8 @@
 import {useState} from 'react'
 import axios from 'axios'
+import '../CreateBlog.css'
 
-const CreateBlog = ({ addBlogToList }) => {
+const CreateBlog = ({ addBlogToList, onCancel }) => {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
 
@@ -21,6 +22,7 @@ const CreateBlog = ({ addBlogToList }) => {
     .then(response => {
       console.log('Blog created successfully', response.data)
       addBlogToList(response.data)
+      onCancel()
       setTitle('')
       setContent('')
     })
@@ -29,22 +31,23 @@ const CreateBlog = ({ addBlogToList }) => {
     })
   }
 
-
   return (
-    <>
-    <h2>Create a New Blog Post</h2>
-    <form onSubmit={handleSubmit} method="post">
-      <div>
-        Title: <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-      </div>
-      <br />
-      <div>
-        Content: <textarea value={content} onChange={(e) => setContent(e.target.value)} />
-      </div>
-      <br />
-      <button type="submit">Create Blog</button>
-    </form>
-    </>
+    <div className="create-blog-form">
+      <h2>Create a New Blog Post</h2>
+      <form onSubmit={handleSubmit} method="post">
+        <div>
+          Title: <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+        </div>
+        <br />
+        <div>
+          Content: <textarea value={content} onChange={(e) => setContent(e.target.value)} />
+        </div>
+        <br />
+        <button type="submit">Create Blog</button>
+        <button type="button" onClick={onCancel}>Cancel</button>
+      </form>
+    </div>
+
   )
 }
 

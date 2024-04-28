@@ -1,5 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
+import '../EditBlog.css'
 
 const EditBlog = ({ blog, onCancel, onUpdate }) => {
   const [title, setTitle] = useState(blog.title)
@@ -25,7 +26,7 @@ const EditBlog = ({ blog, onCancel, onUpdate }) => {
   }
 
   return(
-    <>
+    <div className="blog-edit">
       <h2>Edit Blog Post</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -39,7 +40,7 @@ const EditBlog = ({ blog, onCancel, onUpdate }) => {
         <button type="submit">Update Blog</button>
         <button type="button" onClick={onCancel}>Cancel</button>
       </form>
-    </>
+    </div>
   )
 }
 

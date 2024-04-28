@@ -1,0 +1,41 @@
+/* Style for the edit form container */
+.blog-edit {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the edit form title */
+.blog-edit h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style for the input fields */
+.blog-edit input[type="text"],
+.blog-edit textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+/* Style for the buttons in the edit form */
+.blog-edit button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.blog-edit button[type="submit"] {
+  background-color: #28a745;
+}
+
+.blog-edit button:hover {
+  background-color: #0056b3;
+}

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import CreateBlog from "./CreateBlog"
 import EditBlog from "./EditBlog"
+import DeleteBlog from "./DeleteBlog"
 
 const DisplayBlogList = () => {
   const [blogs, setBlogs] = useState([])
@@ -24,6 +25,10 @@ const DisplayBlogList = () => {
 
   const handleEditClick = (blog) => {
     setEditingBlog(blog)
+  }
+  
+  const handleDeleteClick = (blogId) => {
+    setBlogs((returnedBlogs) => returnedBlogs.filter((blog) => blog.id !== blogId))
   }
   
   const updateBlogList = (updatedBlog) => {
@@ -50,6 +55,7 @@ const DisplayBlogList = () => {
           <p>{blog.content}</p>
           <p>Date: {blog.date}</p>
           <button onClick={() => handleEditClick(blog)}>Edit</button>
+          <DeleteBlog blogId={blog.id} onDelete={() => handleDeleteClick(blog.id)} />
         </div>
       )  
     ))}

@@ -74,3 +74,9 @@ def blog_post_update(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+@api_view(['DELETE'])
+def blog_post_delete(request, pk):
+    blog_post = get_object_or_404(Blog, pk=pk)
+    blog_post.delete()
+    return Response(status=status.HTTP_204_NO_CONTENT)

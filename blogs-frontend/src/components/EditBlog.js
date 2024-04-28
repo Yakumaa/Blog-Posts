@@ -8,7 +8,7 @@ const EditBlog = ({ blog, onCancel, onUpdate }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     const csrftoken = document.cookie.match('(^|;)\\s*csrftoken\\s*=\\s*([^;]+)')?.pop();
-    axios.put(`/api/blog/${blog.id}/`, { title, content }, {
+    axios.put(`/api/blog/${blog.id}/update/`, { title, content }, {
       headers: {
         'X-CSRFToken': csrftoken,
         'Content-Type': 'application/json',

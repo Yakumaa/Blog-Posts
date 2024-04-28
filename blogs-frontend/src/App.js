@@ -1,10 +1,10 @@
 import DisplayBlogList from './components/DisplayBlogList';
-import CreateBlog from './components/CreateBlog';
+// import CreateBlog from './components/CreateBlog';
 
 function App() {
   return (
     <div className="App">
-      <CreateBlog />
+      {/* <CreateBlog /> */}
       <DisplayBlogList />
     </div>
   );

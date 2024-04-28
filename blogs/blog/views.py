@@ -40,12 +40,13 @@ def blog_post_create(request):
     if request.method == 'POST':
         # Print entire request.body for debugging
         print(request.body)
+        print(request.headers.get('Content-Type'))
 
         # Parse JSON data from request.body
         try:
             data = json.loads(request.body)
-            title = data.get('newTitle')
-            content = data.get('newContent')
+            title = data.get('title')
+            content = data.get('content')
 
             # Print title and content for debugging
             print('Title:', title)

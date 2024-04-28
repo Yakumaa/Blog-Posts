@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
+import CreateBlog from "./CreateBlog"
 
 function DisplayBlogList() {
   const [blogs, setBlogs] = useState([])
@@ -15,6 +16,10 @@ function DisplayBlogList() {
       })
   }, [])
 
+  const addBlogToList = (newBlog) => {
+    setBlogs([...blogs, newBlog])
+  }
+
   return (
     <>
     <h2>Blog Posts</h2>
@@ -25,6 +30,8 @@ function DisplayBlogList() {
         <p>Date: {blog.date}</p>
       </div>
     ))}
+    
+    <CreateBlog addBlogToList={addBlogToList} />
     </>
   )
 }

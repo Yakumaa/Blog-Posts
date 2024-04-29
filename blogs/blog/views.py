@@ -44,15 +44,11 @@ def blog_post_create(request):
             return Response({'error': 'Invalid JSON data.'}, status=status.HTTP_400_BAD_REQUEST)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
-@api_view(['GET', 'PUT'])
+@api_view(['PUT'])
 def blog_post_update(request, pk):
     blog_post = get_object_or_404(Blog, pk=pk)
 
-    if request.method == 'GET':
-        serializer = BlogSerializer(blog_post)
-        return Response(serializer.data)
-
-    elif request.method == 'PUT':
+    if request.method == 'PUT':
         try:
             data = json.loads(request.body)
             title = data.get('title')
@@ -68,10 +64,6 @@ def blog_post_update(request, pk):
                 return Response({'error': 'Title and content are required.'}, status=status.HTTP_400_BAD_REQUEST)
         except json.JSONDecodeError:
             return Response({'error': 'Invalid JSON data.'}, status=status.HTTP_400_BAD_REQUEST)
-
-    elif request.method == 'DELETE':
-        blog_post.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 

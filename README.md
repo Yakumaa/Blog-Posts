@@ -54,7 +54,12 @@ cd RamailoTech-Internship-Task/blogs-frontend
 npm install
 ```
 
-3. Start the React development server:
+3. Create the build directory
+```
+npm run build
+```
+
+4. Start the React development server:
 ```
 npm start
 ```

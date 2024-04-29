@@ -10,7 +10,7 @@ import json
 # Create your views here.
 @api_view(['GET'])
 def blog_post_list(request):
-  blog_posts = Blog.objects.all()
+  blog_posts = Blog.objects.all().order_by('-date')
   serializer = BlogSerializer(blog_posts, many=True)
   return Response(serializer.data)
 

@@ -22,7 +22,7 @@ const DisplayBlogList = () => {
   }, [])
 
   const addBlogToList = (newBlog) => {
-    setBlogs([...blogs, newBlog])
+    setBlogs([newBlog, ...blogs])
   }
 
   const handleCreateBlogClick = () => {

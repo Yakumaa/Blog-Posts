@@ -1,14 +1,19 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
+// import ReactPaginate from 'react-paginate';
 import CreateBlog from "./CreateBlog"
 import EditBlog from "./EditBlog"
 import DeleteBlog from "./DeleteBlog"
 import '../DisplayBlogList.css'
+import Header from './Header'
+import Footer from "./Footer"
 
 const DisplayBlogList = () => {
   const [blogs, setBlogs] = useState([])
   const [creatingBlog, setCreatingBlog] = useState(false)
   const [editingBlog, setEditingBlog] = useState(null)
+  // const [currentPage, setCurrentPage] = useState(0);
+  // const [blogsPerPage] = useState(5);
 
   useEffect(() => {
     axios.get("api/blog/")
@@ -50,8 +55,18 @@ const DisplayBlogList = () => {
     })
   }
 
+  // const indexOfLastBlog = currentPage * blogsPerPage;
+  // const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
+  // const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
+
+  // const handlePageChange = (selectedPage) => {
+  //   setCurrentPage(selectedPage.selected);
+  // };
+
   return (
     <div className="blog-list">
+      <Header />
+
       <div className="blog-header-container">
         <h2 className="blog-heading">Blog Posts</h2>
 
@@ -85,6 +100,16 @@ const DisplayBlogList = () => {
         </div>
       ))
       )}
+
+      {/* <ReactPaginate
+        previousLabel={'Previous'}
+        nextLabel={'Next'}
+        pageCount={Math.ceil(blogs.length / blogsPerPage)}
+        onPageChange={handlePageChange}
+        containerClassName={'pagination'}
+        activeClassName={'active'}
+      /> */}
+      <Footer />
 
     </div>
   )

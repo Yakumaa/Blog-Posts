@@ -18,12 +18,12 @@ This is a simple web application that allows users to create, read, update, and 
 
 1. Clone the repository:
 ```
-git clone https://github.com/Yakumaa/RamailoTech-Internship-Task.git
+git clone https://github.com/Yakumaa/Blog-Posts.git
 ```
 
 2. Navigate to the backend directory:
 ```
-cd RamailoTech-Internship-Task/blogs
+cd Blog-Posts/blogs
 ```
 
 3. Create a virtual environment and activate it:
@@ -46,7 +46,7 @@ python manage.py runserver
 
 1. Navigate to the frontend directory:
 ```
-cd RamailoTech-Internship-Task/blogs-frontend
+cd Blog-Posts/blogs-frontend
 ```
 
 2. Install the required Node.js packages:
